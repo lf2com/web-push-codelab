@@ -69,6 +69,7 @@ function updateSubscriptionOnServer(subscription) {
   const subscriptionDetails =
     document.querySelector('.js-subscription-details');
 
+  console.log('update subscription on server: ', subscription);
   if (subscription) {
     subscriptionJson.textContent = JSON.stringify(subscription);
     subscriptionDetails.classList.remove('is-invisible');
@@ -84,7 +85,7 @@ function subscribeUser() {
     applicationServerKey: applicationServerKey
   })
   .then(function(subscription) {
-    console.log('User is subscribed.');
+    console.log('User is subscribed.', subscription);
 
     updateSubscriptionOnServer(subscription);
 
