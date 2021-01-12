@@ -95,6 +95,7 @@ function subscribeUser() {
   })
   .catch(function(err) {
     console.log('Failed to subscribe the user: ', err);
+    console.warn(err);
     updateBtn();
   });
 }
